@@ -4,9 +4,48 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700;900&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/e6cb18a7d8.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/style.css">
   <title>Weather App</title>
 </head>
 <body>
+  <i class="fa-solid fa-cloud-sun bgIcon"></i>
 
+  <div class="mainContainer">
+    <section class="mainInfo">
+      <div class="title">
+        <h1>
+          Weather App
+        </h1>
+        <span>
+          <i class="fa-solid fa-cloud-sun"></i>
+        </span>
+      </div>
+      <form >
+        <label for="city">Choose your city</label>
+        <input type="text" name="city" placeholder="Warsaw, London, New York, Tokyo...">
+      </form>
+    </section>
+
+    <section class="weatherContainer">
+      <div class="weatherInfo">
+        <p class="city">Warsaw</p>
+        <p class="conditions">Cloudy</p>
+        <p class="degrees">18 &deg;C</p>
+      </div>
+      <div class="imgDay-Night">
+        <img src="/images/day.svg" alt="day">
+      </div>
+      <div class="icon">
+        <i class="fa-solid fa-cloud-sun"></i>
+      </div>
+    </section>
+  </div>
+
+
+
+  <script src="js/weather.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>

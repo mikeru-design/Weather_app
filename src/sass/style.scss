@@ -1,0 +1,244 @@
+@import 'settings.scss';
+
+*, *::before, *::after{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  overflow: hidden;
+}
+
+body{
+  position: relative;
+  min-height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  overflow: hidden;
+
+  .bgIcon{
+    position: absolute;
+    bottom: 0;
+    right: -10%;
+    font-size: 200px;
+    color: $blue-color;
+    // filter: drop-shadow(3px 3px 0 darken($color: $blue-color, $amount: 20));
+    opacity: .3;
+    z-index: -1;
+  }
+}
+
+.mainContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.mainInfo{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px 20px 0px;
+
+  &::before{
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 1px;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background-color: $blue-color;
+    border-radius: 5px;
+  }
+
+  .title{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    height: 4rem;
+    margin-bottom: 20px;
+
+    &::before{
+      content: '';
+      position: absolute;
+      width: 30%;
+      height: 4px;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      background-color: $blue-color;
+      border-radius: 5px;
+    }
+
+    h1{
+      position: relative;
+      display: inline-block;
+      width: auto;
+
+      color: $text-color;
+      font-size: 2rem;
+    }
+    span{
+      position: relative;
+      align-self: start;
+      width: auto;
+      font-size: 2.5rem;
+      color: #4dd3eb;
+    }
+  }
+
+  form{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    padding: 20px 10px;
+    margin: 10px auto 0px;
+
+    label{
+      margin-bottom: 10px;
+      font-size: .8rem;
+      text-transform: uppercase;
+    }
+
+    input{
+      width: 95%;
+      padding: 10px 15px;
+      border-radius: 30px;
+      border: 1px solid $text-color;
+
+      &:focus-visible{
+        border: none;
+      }
+    }
+  }
+}
+
+.weatherContainer{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  height: 55vh;
+  margin: 20px auto 0;
+
+  border: 1px solid $text-color;
+  background-color: white;
+
+  .weatherInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 7%;
+
+    color: $text-color;
+
+    .city{
+      position: relative;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+
+      &::before{
+        content: '';
+        position: absolute;
+        width: 50%;
+        height: 1px;
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        background-color: $blue-color;
+        border-radius: 5px;
+      }
+    }
+
+    .conditions{
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      font-size: .8rem;
+    }
+
+    .degrees{
+      font-size: 3rem;
+    }
+  }
+
+  .icon{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+
+    background-color: lighten($color: $blue-color, $amount: 50);
+    border-radius: 50px;
+    filter: drop-shadow(5px 5px 3px rgba(0, 0, 0, 0.244));
+
+    .fa-cloud-sun{
+      font-size: 40px;
+      color: $blue-color;
+    }
+  }
+
+  .imgDay-Night{
+    position: relative;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    border-top: 1px solid $text-color;
+
+    img{
+      position: absolute;
+      top: 0%;
+      transform: translateY(-20%);
+    }
+  }
+}
+
+@media (width > 800px){
+  body{
+    .bgIcon{
+      bottom: 0;
+      right: -10%;
+      font-size: 400px;
+    }
+  }
+
+  .weatherContainer{
+    .weatherInfo{
+      .city{
+        font-size: 2rem;
+      }
+
+      .degrees{
+        font-size: 4rem;
+      }
+    }
+
+    .imgDay-Night{
+      img{
+        transform: translateY(-25%);
+      }
+    }
+  }
+}
