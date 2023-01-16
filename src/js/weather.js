@@ -9,7 +9,7 @@ const getCity = async (city) => {
   const data = await response.json();
 
   return data[0];
-}
+};
 
 const getWeather = async (locationKey) => {
 
@@ -20,10 +20,6 @@ const getWeather = async (locationKey) => {
   const data = await response.json();
 
   return data[0];
-}
+};
 
-// getCity('warsaw').then( (cityData) => {
-//   return getWeather(cityData.Key);
-// }).then( (weatherData) => {
-//   console.log(weatherData);
-// }).catch(err => console.log(err));
+export { getCity, getWeather };

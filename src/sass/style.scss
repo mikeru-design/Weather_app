@@ -140,6 +140,10 @@ body{
         color: lighten($color: $text-color, $amount: 25);
       }
     }
+
+    button{
+      display: none;
+    }
   }
 }
 
@@ -160,7 +164,6 @@ body{
   transform: translateY(-20%);
   visibility: hidden;
   opacity: 0;
-  // transition-delay:.3s;
   transition: .3s;
 
   .weatherInfo{
@@ -220,6 +223,14 @@ body{
     .fa-cloud-sun{
       font-size: 40px;
       color: $blue-color;
+    }
+
+    img{
+      position: relative;
+      width: 120%;
+      height: 120%;
+      filter: $blue-color-filter;
+
     }
   }
 
