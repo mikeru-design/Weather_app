@@ -243,8 +243,8 @@ body{
 
     img{
       position: absolute;
-      top: 0%;
-      transform: translateY(-20%);
+      top: 50%;
+      transform: translateY(-47%);
     }
   }
 }
@@ -278,12 +278,6 @@ body{
 
       .degrees{
         font-size: 4rem;
-      }
-    }
-
-    .imgDay-Night{
-      img{
-        transform: translateY(-25%);
       }
     }
   }
