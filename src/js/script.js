@@ -39,6 +39,9 @@ cityForm.addEventListener('submit', (e) => {
     .then( data => { console.log(data); updateUI(data);})
     .catch( err => console.log(err));
 
-  weatherCont.classList.add('showWeather');
+  if( !weatherCont.classList.contains('showWeather') ){
+    weatherCont.classList.add('showWeather');
+  }
+  
   cityForm.reset();
 });
