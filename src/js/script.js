@@ -1,20 +1,10 @@
-import { getCity, getWeather } from './weather.js';
+import Forecast from './weather.js';
 const cityForm = document.querySelector('.cityForm');
 const weatherContainer = document.querySelector('.weatherContainer');
-const weatherInfo = document.querySelector('.weatherInfo');
+const weatherInfo = document.querySelector('.weatherInfoText');
 const imgDayNight = document.querySelector('.imgDay-Night');
 const icon = document.querySelector('.icon');
-
-const updateWeather = async (city) => {
-
-  const cityProps = await getCity(city);
-  const weather = await getWeather(cityProps.Key);
-
-  return {
-    cityProps,
-    weather
-  };
-};
+const forecast = new Forecast();
 
 const updateUI = (data) => {
 
@@ -35,7 +25,7 @@ cityForm.addEventListener('submit', (e) => {
   const city = cityForm.city.value;
   console.log(city);
 
-  updateWeather(city)
+  forecast.updateWeather(city)
     .then( data => { console.log(data); updateUI(data);})
     .catch( err => console.log(err));
 
@@ -49,7 +39,7 @@ cityForm.addEventListener('submit', (e) => {
 });
 
 if( localStorage.getItem('city') ){
-  updateWeather(localStorage.getItem('city'))
+  forecast.updateWeather(localStorage.getItem('city'))
     .then( data => { console.log(data); updateUI(data);})
     .catch( err => console.log(err));
 
