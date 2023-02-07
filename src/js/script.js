@@ -1,6 +1,6 @@
 import { getCity, getWeather } from './weather.js';
 const cityForm = document.querySelector('.cityForm');
-const weatherCont = document.querySelector('.weatherContainer');
+const weatherContainer = document.querySelector('.weatherContainer');
 const weatherInfo = document.querySelector('.weatherInfo');
 const imgDayNight = document.querySelector('.imgDay-Night');
 const icon = document.querySelector('.icon');
@@ -39,9 +39,21 @@ cityForm.addEventListener('submit', (e) => {
     .then( data => { console.log(data); updateUI(data);})
     .catch( err => console.log(err));
 
-  if( !weatherCont.classList.contains('showWeather') ){
-    weatherCont.classList.add('showWeather');
+  if( !weatherContainer.classList.contains('showWeather') ){
+    weatherContainer.classList.add('showWeather');
   }
-  
+
+  localStorage.setItem('city', city);
+
   cityForm.reset();
 });
+
+if( localStorage.getItem('city') ){
+  updateWeather(localStorage.getItem('city'))
+    .then( data => { console.log(data); updateUI(data);})
+    .catch( err => console.log(err));
+
+  if( !weatherContainer.classList.contains('showWeather') ){
+    weatherContainer.classList.add('showWeather');
+  }
+}
